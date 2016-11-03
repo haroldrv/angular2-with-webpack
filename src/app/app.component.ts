@@ -9,8 +9,13 @@ import '../../public/css/styles.css';
 
 export class AppComponent {
   title: 'Tour of heroes';
-  heroes = heroes; 
+  heroes: Hero[] = heroes; 
   selectedHero: Hero;
+
+  $onInit(){
+    this.heroes = heroes;
+    console.log('on init executed');
+  }
 
   onSelect(hero: Hero){
     this.selectedHero = hero;
